@@ -1,0 +1,26 @@
+---
+# VM settings
+ip: "10.0.2.15"
+memory: 2048
+cpus: 1
+
+# Use an existing ssh public key from host, uncomment
+#authorize: ~/.ssh/id_rsa.pub
+
+# Private key
+#keys:
+#    - ~/.ssh/id_rsa
+
+# Folder mapping, host to remote
+folders:
+    - map: ~/Projects
+      to: /var/www/
+
+# One site per line
+sites:
+    #- { map: projects.dev, to: "/var/www/projects/public" }
+
+# Environment variables to inject into the PHP-FPM configuration
+variables:
+    - key: APP_ENV
+      value: local
