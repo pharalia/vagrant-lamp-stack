@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+echo "# 1: Updating Packages #"
+apt-get update
+
 apt-get -y install lsb-release
 
 # Enable non-free sources to gain access to libapache2-mod-fastcgi
@@ -23,9 +26,6 @@ deb-src http://ftp.fr.debian.org/debian/ ${DEBIAN_VERSION} non-free
 deb http://security.debian.org/ ${DEBIAN_VERSION}/updates non-free
 deb-src http://security.debian.org/ ${DEBIAN_VERSION}/updates non-free" \
     > '/etc/apt/sources.list.d/non-free.list'
-
-echo "# 1: Updating Packages #"
-apt-get update
 
 echo "# 2: Running Upgrade #"
 apt-get upgrade
